@@ -18,18 +18,17 @@ function Game() {
     }
   }
 
-  function renderSqaure(i) {
+  function renderSqaure(index) {
     return (
       <Square
-        value={square[i]}
+        value={square[index]}
         onClick={() => {
-          if (square[i] != null || winner != null) {
+          if (square[index] != null || winner != null) {
             return;
           }
           const nextSquare = square.slice();
-          nextSquare[i] = nextSymbol;
+          nextSquare[index] = nextSymbol;
           setSquare(nextSquare);
-
           setIsXNext(!isXNext);
         }}
       />
